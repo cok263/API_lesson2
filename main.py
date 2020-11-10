@@ -5,8 +5,6 @@ from dotenv import load_dotenv
 from urllib.parse import urlparse
 
 
-load_dotenv()
-
 def cut_link(link):
     parse_link = urlparse(link)
     return parse_link.netloc + parse_link.path
@@ -66,6 +64,8 @@ def count_clicks(token, link):
 
 
 def main():
+    load_dotenv()
+
     parser = argparse.ArgumentParser(
         description='Программа возвращает количество переходов по укороченной ссылке, либо возвращает укороченную ссылку'
     )
